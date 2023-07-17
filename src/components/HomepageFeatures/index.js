@@ -4,49 +4,68 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Quickstart Guides',
+    link: '/docs/category/quickstarts',
+    Svg: require('@site/static/img/undraw_setup_wizard.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Get up and running in no time with language-specific guides for
+        the most popular frameworks.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Platform Documentation',
+    link: '/docs/category/platform',
+    Svg: require('@site/static/img/undraw_software_engineer.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Questions about databases? Wondering how to invite team members?
+        This section explains each part of the platform.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Troubleshooting',
+    link: '/docs/troubleshooting',
+    Svg: require('@site/static/img/undraw_code_inspection.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Search through the most common problems and get help
+        troubleshooting your deployments and applications.
       </>
     ),
   },
 ];
 
-function Feature({Svg, title, description}) {
+function Feature({ Svg, title, link, description }) {
   return (
     <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+      <div className={clsx('card', 'padding-horiz--md', styles.featureCard)}>
+        <div className="card__image">
+          <Svg className={styles.featureSvg} role="img" />
+        </div>
+        <div class="card__body">
+          <div className="">
+            <h3><a href={link}>{title}</a></h3>
+            <p>{description}</p>
+          </div>
+        </div>
       </div>
-      <div className="text--center padding-horiz--md">
-        <h3>{title}</h3>
-        <p>{description}</p>
-      </div>
+
     </div>
   );
+  // return (
+  //   <div className={clsx('col col--4')}>
+  //     <div className="text--center">
+  //       <Svg className={styles.featureSvg} role="img" />
+  //     </div>
+  //     <div className="text--center padding-horiz--md">
+  //       <h3>{title}</h3>
+  //       <p>{description}</p>
+  //     </div>
+  //   </div>
+  // );
 }
 
 export default function HomepageFeatures() {

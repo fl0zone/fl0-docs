@@ -1,0 +1,10 @@
+{
+  "label": "Quickstarts",
+  "position": 2,
+  "collapsed": false,
+  "className": "margin-vert--md",
+  "link": {
+    "type": "generated-index",
+    "description": "5 minutes to learn the most important Docusaurus concepts."
+  }
+}

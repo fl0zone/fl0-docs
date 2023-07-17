@@ -1,47 +1,45 @@
 ---
 sidebar_position: 1
+slug: /
 ---
 
-# Tutorial Intro
+# Introduction
 
-Let's discover **Docusaurus in less than 5 minutes**.
+## What is FL0?
 
-## Getting Started
+FL0 is a platform that makes it really simple to deploy your code as a web service.
+FL0 can build your code into a container using one of two methods:
 
-Get started by **creating a new site**.
+1. Building a Dockerfile that you provide in your repo
+2. By automatically detecting your codebase
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+Once built, we deploy it to your Dev environment on FL0 and provide you with a unique URL.
+Next time you push a change to your repo, we repeat the process automatically or manually depending on your chosen settings.
 
-### What you'll need
-
-- [Node.js](https://nodejs.org/en/download/) version 16.14 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
-
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
+```mermaid
+flowchart LR
+    code[Your code]
+    git[Git repo]
+    code -->|push|git
+    git -->|deploy| dev
+    subgraph workspace [FL0 Workspace]
+        subgraph project [Project]
+            direction LR
+            dev[FL0 Dev]
+            prod[FL0 Prod]
+            dev -->|promote| prod
+            subgraph dev [Dev]
+                direction TB
+                devApp[App]
+                devDb[DB]
+                devApp -.-> devDb
+            end
+            subgraph prod [Prod]
+                direction TB
+                prodApp[App]
+                prodDb[DB]
+                prodApp -.-> prodDb
+            end
+        end
+    end
 ```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.

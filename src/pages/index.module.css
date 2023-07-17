@@ -4,10 +4,12 @@
  */
 
 .heroBanner {
-  padding: 4rem 0;
+  padding: 6rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
+  --ifm-hero-background-color: transparent;
+  --ifm-hero-text-color: var(--ifm-font-color-base);
 }
 
 @media screen and (max-width: 996px) {
@@ -20,4 +22,30 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.flares {
+  z-index: -1;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-image: linear-gradient(#010202,transparent);
+  position: absolute;
+  top: 0;
+}
+
+.flares img {
+  position: absolute;
+  top: 0%;
+  bottom: auto;
+
+}
+.flares .flaresTop {
+  left: 0%;
+  right: 0%;
+}
+
+.flares .flaresRight {
+  left: auto;
+  right: 0%;
 }
