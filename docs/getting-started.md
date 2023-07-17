@@ -79,7 +79,7 @@ Regardless of the language you are deploying, there are a few things you need ch
     </div>
     <div class="card__body">
       <p>
-        FL0 recommends using a Dockerfile for most control. If you don't want to use a Dockerfile, make sure you've set up your codebase so FL0 knows how to build it. See our <a href="/docs/quickstarts/">quickstart guides</a> for more information.
+        FL0 recommends using a Dockerfile for most control. If you don't want to use a Dockerfile, make sure you've set up your codebase so FL0 knows how to build it. See our <a href="/docs/category/quickstarts/">quickstart guides</a> for more information.
       </p>
     </div>
   </div>
@@ -111,6 +111,6 @@ Once you have a successful deployment, you'll see a unique URL in the summary of
 
 ## Wrapping Up
 
-Nice work! You made it through the crash course on FL0. Be sure to check out our [quickstart guides](/docs/quickstarts/) for more language-specific help.
+Nice work! You made it through the crash course on FL0. Be sure to check out our [quickstart guides](/docs/category/quickstarts/) for more language-specific help.
 
 <iframe src="https://giphy.com/embed/sw2jHJepEyfoEYUToh" width="384" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/MotorTrend-top-gear-topgear-america-sw2jHJepEyfoEYUToh">The FL0 crash course</a></p>
