@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Get in the FL0 state.',
+  title: 'FL0 Documentation',
   tagline: 'Learn how to deploy your code in minutes.',
   favicon: 'img/favicon.png',
 

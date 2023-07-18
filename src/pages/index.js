@@ -16,7 +16,7 @@ function HomepageHeader() {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        <h1 className="hero__title">{siteConfig.title}</h1>
+        <h1 className="hero__title">Get in the FL0 state.</h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.buttons}>
           <Link
@@ -34,8 +34,7 @@ export default function Home() {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      description="Deploy backend applications and databases in minutes.">
       <div className={styles.flares}>
         <img src={FlareTop} loading="lazy" sizes="(max-width: 1920px) 100vw, 1920px" height={834} width={1920}
           alt="" className={styles.flaresTop} />
