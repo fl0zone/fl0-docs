@@ -40,7 +40,7 @@ const FeatureList = [
 
 function Feature({ Svg, title, link, description }) {
   return (
-    <div className={clsx('col col--4')}>
+    <div className={clsx('col col--4 margin-vert--md')}>
       <div className={clsx('card', 'padding-horiz--md', styles.featureCard)}>
         <div className="card__image">
           <Svg className={styles.featureSvg} role="img" />
@@ -52,20 +52,8 @@ function Feature({ Svg, title, link, description }) {
           </div>
         </div>
       </div>
-
     </div>
   );
-  // return (
-  //   <div className={clsx('col col--4')}>
-  //     <div className="text--center">
-  //       <Svg className={styles.featureSvg} role="img" />
-  //     </div>
-  //     <div className="text--center padding-horiz--md">
-  //       <h3>{title}</h3>
-  //       <p>{description}</p>
-  //     </div>
-  //   </div>
-  // );
 }
 
 export default function HomepageFeatures() {
