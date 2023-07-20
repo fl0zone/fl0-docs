@@ -3,6 +3,8 @@
 
 # Node.js
 
+Deploying your Node.js app on FL0 is easy. Follow this guide to configure your codebase correctly.
+
 ## Listening to the Right Port
 
 FL0 injects an environment variable called PORT into your application's container. Your app must listen on this port. Below are some examples of how to do this with popular frameworks.
