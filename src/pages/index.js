@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import Link from '@docusaurus/Link';
+import Link from '@site/src/components/ui/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
@@ -16,11 +16,10 @@ function HomepageHeader() {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        <h1 className="hero__title">Get in the FL0 state.</h1>
+        <h1 className={clsx("hero__title", styles.heroTitle)}>Get in the FL0 state.</h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.buttons}>
           <Link
-            className="button button--secondary button--lg"
             to="/docs/getting-started">
             Get Started - 5min ⏱️
           </Link>
