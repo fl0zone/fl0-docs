@@ -46,6 +46,10 @@ const config = {
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
+        gtag: {
+          trackingID: 'G-2W7HDY1VER',
+          anonymizeIP: true,
+        },
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
@@ -64,6 +68,14 @@ const config = {
           customCss: require.resolve('./src/css/custom.css'),
         },
       }),
+    ],
+    [
+      '@docusaurus/preset-classic',
+      {
+        googleTagManager: {
+          containerId: 'GTM-NV967NDZ',
+        },
+      },
     ],
   ],
 
