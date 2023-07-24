@@ -45,12 +45,12 @@
   opacity: 0.5;
 
 }
-.flares .flaresTop {
+.flaresTop {
   left: 0%;
   right: 0%;
 }
 
-.flares .flaresRight {
+.flaresRight {
   left: auto;
   right: 0%;
 }

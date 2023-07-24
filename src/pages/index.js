@@ -34,11 +34,11 @@ export default function Home() {
   return (
     <Layout
       description="Deploy backend applications and databases in minutes.">
-      <div className={styles.flares}>
+      <div className={clsx(styles.flares)}>
         <img src={FlareTop} loading="lazy" sizes="(max-width: 1920px) 100vw, 1920px" height={834} width={1920}
-          alt="" className={styles.flaresTop} />
+          alt="" className={clsx(styles.flaresTop)} />
         <img src={FlareRight} loading="lazy" sizes="(max-width: 1622px) 100vw, 1622px" height={1109} width={1622}
-          alt="" className={[styles.flaresRight, styles.hideMobile]} />
+          alt="" className={clsx(styles.flaresRight, styles.hideMobile)} />
         <img src={FlareLeft} loading="lazy" sizes="(max-width: 1518px) 100vw, 1518px" height={1112} width={1518}
           alt=""
           className={styles.hideMobile} />
