@@ -1,0 +1,10 @@
+{
+  "label": "Guides",
+  "position": 4,
+  "collapsed": false,
+  "className": "margin-vert--md",
+  "link": {
+    "type": "generated-index",
+    "description": "Step-by-step tutorials on specific topics"
+  }
+}
