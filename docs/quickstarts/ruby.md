@@ -19,6 +19,13 @@ FL0's build system will attempt to automatically detect the correct version of R
 5. 3.0.6
 6. 3.0.5
 
+To change your Ruby version, ensure that one of the above versions are specified in your `Gemfile`. For example, add the following to the `Genmfile`:
+```
+ruby "3.2.2"
+```
+Don't forget to run `bundle install` afterwards. If you are running a different version of Ruby locally, you may be required to change that version first (e.g. through [rbenv](https://github.com/rbenv/rbenv) or [rvm](https://rvm.io/)).
+
+
 ## Listening to the Right Port
 
 FL0 injects an environment variable called `PORT` into your application's container. Your app must listen on this port.
