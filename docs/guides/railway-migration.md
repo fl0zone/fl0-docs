@@ -59,32 +59,9 @@ First, we need to make sure we have an account on FL0. If you don't have one, yo
 
 Next, we need to make sure we have a Github account with admin access to the repo we want to deploy. This is because we will be linking our FL0 account to our Github account, so we can deploy our code directly from Github.
 
-### Environment Variables
-
-Finally, we need to make sure we have all of our environment variables needed for our application. We will need to manually unpack any dynamic environment variables, such as `${{shared.API_KEY}}`, **_as FL0 does not support them natively_**. We will also need to make sure we have all of our environment variables in one place, even if they are shared across multiple services.
-
-Once we have all of the above, nothing is stopping us from deploying our application to FL0!
-
-<!-- - Steps
-  - Auth into FL0
-  - Create a new project
-  - Create a new database
-  - Create a new service
-    - Link Github
-    - Select repo
-      - ? can we select a different branch?
-    - (Optional) Add env vars
-  - (Optional) Add env vars now instead
-    - Redeploy
-  - Test and Rejoice -->
-
 ## Steps
 
-<!-- Once you're logged into your FL0 account, you should see a (beautiful) screen like this: -->
-
 Let's start at the beginning, and log into our FL0 account. Once we're logged in, we should see a (beautiful) screen like this:
-
-<!-- LINK FL0 Home Screen -->
 
 Now we can start deploying our application to FL0!
 

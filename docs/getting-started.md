@@ -75,7 +75,7 @@ Regardless of the language you are deploying, there are a few things you need ch
 <div class="margin-top--md">
   <div class="card">
     <div class="card__header">
-      <h3>4. Supply a Dockerfile</h3>
+      <h3>4. Supply a Dockerfile (optional)</h3>
     </div>
     <div class="card__body">
       <p>
