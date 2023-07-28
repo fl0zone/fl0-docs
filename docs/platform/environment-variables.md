@@ -10,8 +10,6 @@ sidebar_position: 5
 Any changes to Environment Variables will require your app to be redeployed. After you edit an Environment Variable, trigger a manual deployment or push a commit for the changes to take effect.
 :::
 
-## Importing Database Credentials
-
 ## Using Environment Variables at Build-Time
 
 :::info coming soon
