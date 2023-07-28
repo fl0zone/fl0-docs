@@ -46,13 +46,6 @@ const config = {
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        gtag: {
-          trackingID: process.env.GTAG_TRACKING_ID ?? 'G-2W7HDY1VER',
-          anonymizeIP: true,
-        },
-        googleTagManager: {
-          containerId: process.env.GTM_CONTAINER_ID ?? 'GTM-NV967NDZ',
-        },
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
