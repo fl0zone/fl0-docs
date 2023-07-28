@@ -179,6 +179,15 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
+  plugins: [
+    [
+      "@twilio-labs/docusaurus-plugin-segment",
+      {
+        writeKey: process.env.SEGMENT_WRITE_KEY ?? 'EnAgJb0aBhCq0JDkWRyEn1J3WSXNFfZP',
+        allowedInDev: false,
+      },
+    ],
+  ],
 };
 
 module.exports = config;
