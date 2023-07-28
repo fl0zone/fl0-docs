@@ -13,7 +13,8 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "search:index": "docker run -it --env-file=crawler/.env -e \"CONFIG=$(cat crawler/config.json | jq -r tostring)\" algolia/docsearch-scraper"
+    "search:index": "docker run -it --env-file=crawler/.env -e \"CONFIG=$(cat crawler/config.json | jq -r tostring)\" algolia/docsearch-scraper",
+    "search:index:prod": "docker run -it --env-file=crawler/.env -e \"CONFIG=$(cat crawler/config.prod.json | jq -r tostring)\" algolia/docsearch-scraper"
   },
   "dependencies": {
     "@docusaurus/core": "2.4.1",

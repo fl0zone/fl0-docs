@@ -93,7 +93,7 @@ const config = {
           },
           { to: 'https://blog.fl0.com', label: 'Blog', position: 'left' },
           {
-            href: 'https://app.fl0.dev',
+            href: 'https://app.fl0.com',
             label: 'Platform',
             position: 'right',
           },
