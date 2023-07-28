@@ -47,11 +47,11 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         gtag: {
-          trackingID: process.env.GTAG_TRACKING_ID,
+          trackingID: process.env.GTAG_TRACKING_ID ?? 'G-2W7HDY1VER',
           anonymizeIP: true,
         },
         googleTagManager: {
-          containerId: process.env.GTM_CONTAINER_ID,
+          containerId: process.env.GTM_CONTAINER_ID ?? 'GTM-NV967NDZ',
         },
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
@@ -147,12 +147,12 @@ const config = {
       },
       algolia: {
         // The application ID provided by Algolia
-        appId: process.env.ALGOLIA_APP_ID,
+        appId: process.env.ALGOLIA_APP_ID ?? 'C3FKPUUQAK',
 
         // Public API key: it is safe to commit it
-        apiKey: process.env.ALGOLIA_API_KEY,
+        apiKey: process.env.ALGOLIA_API_KEY ?? '15b04a1ada9cffdb8efdb8cc82a3e666',
 
-        indexName: process.env.ALGOLIA_INDEX_NAME,
+        indexName: process.env.ALGOLIA_INDEX_NAME ?? 'prod_fl0_docs',
 
         // Optional: see doc section below
         contextualSearch: true,

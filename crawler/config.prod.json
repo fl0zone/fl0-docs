@@ -1,5 +1,5 @@
 {
-  "index_name": "fl0_docs",
+  "index_name": "prod_fl0_docs",
   "start_urls": ["https://documentation.fl0.io"],
   "sitemap_urls": ["https://documentation.fl0.io/sitemap.xml"],
   "sitemap_alternate_links": true,
