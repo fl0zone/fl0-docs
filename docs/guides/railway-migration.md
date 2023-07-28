@@ -33,7 +33,7 @@ If you have active users, you might want to put up a Maintenance page so data is
 
 Backup your Railway Postgres data by [following their instructions](https://blog.railway.app/p/postgre-backup).
 
-### Import Into FL0
+### Importing Data Into FL0
 
 Open your database on FL0 and navigate to the Connection Info screen. There, you'll find the credentials you need to connect and import data.
 
