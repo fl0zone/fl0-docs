@@ -42,9 +42,11 @@ function Feature({ Svg, title, link, description }) {
   return (
     <div className={clsx('col col--4 margin-vert--md')}>
       <div className={clsx('card', 'padding-horiz--md', styles.featureCard)}>
-        <div className={clsx("card__image", styles.featureCardImage)}>
-          <Svg className={styles.featureSvg} role="img" />
-        </div>
+        <a href={link}>
+          <div className={clsx("card__image", styles.featureCardImage)}>
+            <Svg className={styles.featureSvg} role="img" />
+          </div>
+        </a>
         <div className={clsx("card__body", styles.featureCardBody)}>
           <div className="">
             <h3><a href={link}>{title}</a></h3>
