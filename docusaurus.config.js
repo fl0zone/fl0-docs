@@ -124,8 +124,8 @@ const config = {
                 href: 'https://www.linkedin.com/company/fl0',
               },
               {
-                label: 'Support',
-                href: 'https://help.fl0.com',
+                label: 'Support - Discord',
+                href: 'https://discord.gg/QPXqWK3bVw',
               },
             ],
           },
