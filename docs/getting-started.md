@@ -10,7 +10,7 @@ Buckle up, let's get something deployed on FL0 **in less than 5 minutes**.
 
 Here's what you'll need:
 
-1. A [FL0 account](https://app.fl0.dev)
+1. A [FL0 account](https://app.fl0.com)
 2. A Github account with admin permissions
 3. A <MotivationalSong>motivational song</MotivationalSong> to play while following these steps
 
@@ -18,7 +18,7 @@ Here's what you'll need:
 
 ## Complete the Onboarding
 
-Head over to the [FL0 platform](https://app.fl0.dev/), create an account and complete the onboarding. The platform will guide you through:
+Head over to the [FL0 platform](https://app.fl0.com), create an account and complete the onboarding. The platform will guide you through:
 
 1. Setting up your account
 2. Creating a project
@@ -75,7 +75,7 @@ Regardless of the language you are deploying, there are a few things you need ch
 <div class="margin-top--md">
   <div class="card">
     <div class="card__header">
-      <h3>4. Supply a Dockerfile</h3>
+      <h3>4. Supply a Dockerfile (optional)</h3>
     </div>
     <div class="card__body">
       <p>

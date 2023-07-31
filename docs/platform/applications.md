@@ -8,6 +8,28 @@ With FL0 you can take your code and turn it into a working application, deployed
 
 Apps can provide REST or GraphQL APIs, run scheduled jobs, perform batch processing or any other kind of backend processes.
 
+```mermaid
+flowchart
+    workspace1[Workspace]
+    project1[Project]
+    workspace1 --> project1
+    project1 --> app1
+    project1 --> db1
+    project1 --> app2
+    project1 --> db2
+    subgraph prod [Production]
+        class prod cssClass
+        app2[Application]
+        db2[Database]
+    end
+    subgraph dev [Development]
+        app1[Application]
+        db1[Database]
+    end
+    classDef highlight fill:#6de5df,color:#000;
+    class app1,app2 highlight;
+```
+
 ### Creating Apps
 
 #### Requirements
@@ -16,7 +38,6 @@ In order to create an app in FL0, you must have the following:
 
 1. Your code stored in a Github repository
 2. Admin permissions to the Github organization
-3. A Dockerfile in the root of your repository
 
 #### Connecting to Github
 
@@ -25,10 +46,6 @@ See the section on [Connecting a Workspace to Github](/docs/platform/workspaces.
 #### Naming the App
 
 The name you give your app will become part of the hostname of the app. See the section on [Using the App](#using-the-app) for more information.
-
-#### Selecting an Environment
-
-When you first create an app, choose the environment to which it should be deployed. In most cases, apps should be deployed to Development first, and promoted to Production later.
 
 #### Automatic vs Manual Deployments
 
@@ -57,11 +74,7 @@ Once successfully deployed, you can access your app using the URL found on the *
 
 Environment variables are custom settings that can be passed into your app when FL0 builds and deploys it. These settings can have different values in Development and Production.
 
-:::info
-Any changes to Environment Variables will require your app to be redeployed. After you edit an Environment Variable, trigger a manual deployment or push a commit for the changes to take effect.
-:::
-
-For more information, see the [Dockerfile reference.](https://docs.docker.com/engine/reference/builder/#env)
+Read more on the [Environment Variables](./environment-variables.md) page.
 
 ### Viewing Logs
 
