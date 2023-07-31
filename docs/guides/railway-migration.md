@@ -9,6 +9,8 @@ With Railway sunsetting their free tier, now is a great time to make use of FL0'
 2. Not requiring a custom domain
 3. Not using a monorepo (but they'll be supported soon!)
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9BiJjrPzPi0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## Setting up a FL0 Account
 
 Head over to the [FL0 platform](https://app.fl0.com), create an account and complete the onboarding. The platform will guide you through setting up your account and creating a project.
