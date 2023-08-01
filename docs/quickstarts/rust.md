@@ -31,7 +31,9 @@ axum::Server::bind(&SocketAddr::from(([0, 0, 0, 0], port)))
 
 ## Built-in Language Support
 
-:::info We don't natively support Rust builds in FL0 yet, so you will need to include a dockerfile in your repo.
+:::info 
+We don't natively support Rust builds in FL0 yet, so you will need to include a dockerfile in your repo.
+:::
 
 ## Dockerfile Support
 
