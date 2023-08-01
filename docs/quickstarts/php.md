@@ -9,7 +9,7 @@ To deploy your PHP app on FL0, follow the guide below to configure your codebase
 
 Add a new file `index.php` into an empty repository, and deploy this repository with FL0:
 
-```js title="/index.php"
+```php title="/index.php"
 <!DOCTYPE html>
 <html>
   <head>
