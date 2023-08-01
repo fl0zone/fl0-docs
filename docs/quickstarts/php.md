@@ -25,5 +25,7 @@ Add a new file `index.php` into an empty repository, and deploy this repository 
 
 View an example template repository at https://github.com/fl0zone/template-php-minimal
 
-### Additional examples
-Additional examples are coming soon
+### Coming soon
+
+- ability to start `index.php` from a subfolder in your repository
+- example using Composer to manage dependencies
