@@ -14,7 +14,12 @@ Billing is managed at the [Workspace](./workspaces) level, and can be found by n
 
 ### Upgrading a Workspace
 
-To upgrade your free workspace to a paid plan, click the "Upgrade to Pro" button on the [Plans & billing](#managing-billing) page and follow the checkout instructions.
+To upgrade your free workspace to a paid plan:
+
+1. Navigate to the Workspace you wish to upgrade
+2. Click on the Workspace Settings tab
+3. Select the [Plans & billing](#managing-billing) menu item
+4. Look for the "Upgrade to Pro" button and follow the checkout instructions
 
 ### Downgrading a Workspace
 
