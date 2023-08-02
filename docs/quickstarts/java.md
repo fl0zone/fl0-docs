@@ -3,22 +3,69 @@
 
 # Java
 
-It is simple to deploy a Java application onto the FL0 platform. This example details getting started with Maven and Spring Boot - typically a standard Maven configuration _should_ be able to be built with the [Paketo Buildpacks](https://github.com/paketo-buildpacks/) that are used.
+This page explains how to get started with Maven and Spring Boot. With FL0, you can choose to provide a Dockerfile or use our built-in support for Java. A standard Maven configuration can usually be built without the need for a Dockerfile.
 
-## Binding to the right port
+## Listening to the right port
 
-By default FL0 will expect you to listen on port `8080`, however this is configurable. The platform will inject the `PORT` environment variable when starting your application and you should bind to this. You can also set which port the platform will expect you to listen on by setting the `PORT` environment variable in the `Environemnt Variables` section of your service.
+FL0 injects an environment variable called PORT into your application's container. Your app must listen on this port. You can override this by providing a different value for `PORT` in the [Environment Variables](../platform/environment-variables) section of your application.
 
-### Spring Boot
+Below is an example of how to do this with Spring Boot:
 
-We can configure Spring to use the PORT env var as such, if the `PORT` environment variable is set we will use the value of it (it will always be set in FL0) otherwise we will fall back to `8080`:
-
-```java 
+```java
     SpringApplication app = new SpringApplication(DemoApplication.class);
     String port = System.getenv("PORT");
     app.setDefaultProperties(Collections.singletonMap("server.port", port == null ? "8080" : port));
     app.run(args);
 ```
+
+## Built-in Language Support
+
+You can build and deploy a Java application without a Dockerfile using FL0's automatic builds. FL0 uses a buildpack system where one or more buildpacks may be applied to your project depending on how it is configured.
+
+### Gradle
+
+This buildpack will be applied if any of the following conditions are met:
+
+1. `<APPLICATION_ROOT>/build.gradle` exists
+2. `<APPLICATION_ROOT>/build.gradle.kts` exists
+
+The buildpack will do the following:
+
+- Requests that a JDK be installed
+- Links the `~/.gradle` to a layer for caching
+- If `<APPLICATION_ROOT>/gradlew` exists
+  - Runs `<APPLICATION_ROOT>/gradlew --no-daemon assemble` to build the application
+- If `<APPLICATION_ROOT>/gradlew` does not exist
+  - Contributes Gradle to a layer with all commands on `$PATH`
+  - Runs `<GRADLE_ROOT>/bin/gradle --no-daemon assemble` to build the application
+- Removes the source code in `<APPLICATION_ROOT>`, following include/exclude rules
+
+### Maven
+
+This buildpack will participate all the following conditions are met
+
+- Another buildpack requires `maven`, `jvm-application-package` or both
+- `<APPLICATION_ROOT>/pom.xml` exists
+
+The buildpack will do the following:
+
+- Requests that a JDK be installed
+- Links the `~/.m2` to a layer for caching
+- If `<APPLICATION_ROOT>/mvnw` does not exist and `mvn` is not on `$PATH`
+  - Contributes Maven or Maven Daemon to a layer with all commands on `$PATH`
+  - Runs `<MAVEN_ROOT>/bin/mvn -Dmaven.test.skip=true --no-transfer-progress package` to build the application
+  - Caches `$BP_MAVEN_BUILT_ARTIFACT` to a layer
+- If `<APPLICATION_ROOT>/mvnw` exists
+  - Runs `<APPLICATION_ROOT>/mvnw -Dmaven.test.skip=true --no-transfer-progress package` to build the application
+  - Caches `$BP_MAVEN_BUILT_ARTIFACT` to a layer
+- If `mvn` is on `$PATH`
+  - Runs `mvn -Dmaven.test.skip=true --no-transfer-progress package` to build the application
+  - Caches `$BP_MAVEN_BUILT_ARTIFACT` to a layer
+- Removes the source code in `<APPLICATION_ROOT>`, following include/exclude rules
+- If `$BP_MAVEN_BUILT_ARTIFACT` matched a single file
+  - Restores `$BP_MAVEN_BUILT_ARTIFACT` from the layer, expands the single file to `<APPLICATION_ROOT>`
+- If `$BP_MAVEN_BUILT_ARTIFACT` matched a directory or multiple files
+  - Restores the files matched by `$BP_MAVEN_BUILT_ARTIFACT` to `<APPLICATION_ROOT>`
 
 ## Example Template
 
