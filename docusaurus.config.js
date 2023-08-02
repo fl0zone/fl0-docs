@@ -21,6 +21,12 @@ const config = {
   organizationName: 'fl0zone', // Usually your GitHub org/user name.
   projectName: 'fl0-docs', // Usually your repo name.
 
+  customFields: {
+    repoId: 'R_kgDOJ8r-yA',
+    discussionsCategoryName: 'Comments',
+    discussionsCategoryId: 'DIC_kwDOJ8r-yM4CYTZq'
+  },
+
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
