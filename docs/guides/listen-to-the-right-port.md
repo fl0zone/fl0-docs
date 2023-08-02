@@ -30,7 +30,7 @@ app.listen(port, () => {
 });
 ```
 
-For other language-specific examples, see our [Quickstart Guides](../quickstarts/).
+For other language-specific examples, see our [Quickstart Guides](/docs/category/quickstarts).
 
 ## What Happens If I Don't?
 
