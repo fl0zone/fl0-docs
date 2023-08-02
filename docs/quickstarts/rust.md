@@ -14,7 +14,7 @@ FL0 injects an environment variable called `PORT` into your application's contai
 ```rust title=src/main.rs
 // read the port from env vars.
 let port = std::env::var("PORT")
-  .unwrap_or("3000".to_string())
+  .unwrap_or("8080".to_string())
   .parse::<u16>()
   .expect("could not parse PORT env var");
 
@@ -31,7 +31,7 @@ axum::Server::bind(&SocketAddr::from(([0, 0, 0, 0], port)))
 
 ## Built-in Language Support
 
-:::info 
+:::info
 We don't natively support Rust builds in FL0 yet, so you will need to include a dockerfile in your repo.
 :::
 
@@ -42,7 +42,7 @@ FL0 will create a container based on this Dockerfile and deploy it to your envir
 Below is an example multi-stage Dockerfile designed to work well locally and on FL0.
 
 ```dockerfile title=Dockerfile
-# Leveraging the pre-built Docker images with 
+# Leveraging the pre-built Docker images with
 # cargo-chef and the Rust toolchain
 FROM lukemathwalker/cargo-chef:latest-rust-1.65.0 AS chef
 WORKDIR /app
@@ -57,10 +57,9 @@ COPY --from=planner /app/recipe.json recipe.json
 RUN cargo chef cook --recipe-path recipe.json
 
 COPY . .
-RUN cargo build 
+RUN cargo build
 
 FROM rust:1.65-slim AS template-rust
 COPY --from=builder /app/target/debug/template-rust /usr/local/bin
 ENTRYPOINT ["/usr/local/bin/template-rust"]
 ```
-
