@@ -86,5 +86,3 @@ Logs from the containers running your apps can be found on the **Logs** tab.
 ### Scaling Apps
 
 FL0 is configured to automatically scale the number of containers running your app depending on CPU and memory usage.
-
-###

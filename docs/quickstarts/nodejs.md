@@ -7,7 +7,9 @@ Deploying your Node.js app on FL0 is easy. Follow this guide to configure your c
 
 ## Listening to the Right Port
 
-FL0 injects an environment variable called PORT into your application's container. Your app must listen on this port. Below are some examples of how to do this with popular frameworks.
+FL0 injects an environment variable called PORT into your application's container. Your app must listen on this port. You can override this by providing a different value for `PORT` in the [Environment Variables](../platform/environment-variables) section of your application.
+
+Below are some examples of how to do this with popular frameworks.
 
 ### Express
 
@@ -41,7 +43,7 @@ bootstrap();
 
 ## Built-in Language Support
 
-You can build and deploy a Node.js application without a Dockerfile using FL0's built-in automatic builds.
+You can build and deploy a Node.js application without a Dockerfile using FL0's automatic builds. To do this, ensure you have a `package.json` file in the root of your repo.
 
 ### Specifying a Node Version
 
