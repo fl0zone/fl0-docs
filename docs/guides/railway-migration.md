@@ -3,11 +3,69 @@
 
 # Migrating from Railway
 
-## Is FL0 right for you?
+With Railway sunsetting their free tier, now is a great time to make use of FL0's free plan. It's perfect if you're:
 
-1. You're deploying web services (frontend or backend)
-2. You don't need a custom domain
-3. You don't use a monorepo
+1. Deploying web services - frontend or backend
+2. Not requiring a custom domain
+3. Not using a monorepo (but they'll be supported soon!)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9BiJjrPzPi0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+## Setting up a FL0 Account
+
+Head over to the [FL0 platform](https://app.fl0.com), create an account and complete the onboarding. The platform will guide you through setting up your account and creating a project.
+
+![FL0 onboarding](../assets/onboarding.gif)
+
+### Create Your Databases
+
+If you were using Postgres databases in Railway, now's the time to recreate them in FL0! You can do this by clicking the `Add New` dropdown and selecting `Postgres Database`. Give a name to your database, and click the Create button. And voila! We have a new database.
+
+![Create a database](assets/create-database.gif)
+
+## Migrating Data
+
+Let's look at how you can backup your Railway database and import it into FL0.
+
+:::info tip
+If you have active users, you might want to put up a Maintenance page so data isn't modified while you're migrating.
+:::
+
+### Backing Up Railway Data
+
+Backup your Railway Postgres data by [following their instructions](https://blog.railway.app/p/postgre-backup).
+
+### Importing Data Into FL0
+
+Open your database on FL0 and navigate to the Connection Info screen. There, you'll find the credentials you need to connect and import data.
+
+![Database connection](../platform/assets/database-connection.gif)
+
+To import, you can use any of your preferred tools. For a nice UI, check out [DBeaver](https://dbeaver.io/)
+
+## Migrating Apps
+
+Now that we have a database, we can create a new application. This can be done by clicking the `Add New` dropdown and selecting `Application`. You will be prompted to link your Github account if you haven't done that yet.
+
+### Environment Variables
+
+While deploying your application, FL0 will allow you to set environment variables for your app. To extract these from Railway, use this CLI command:
+
+```bash
+railway variables -k >> .env
+```
+
+This command will extract the environment variables from Railway and save them to a file called `.env`.
+Copy the contents of the `.env` file and paste it into the first row of the Environment Variables page in FL0.
+
+![Pasting environment variables in bulk](../platform/assets/environment-variables-paste.gif)
+
+### Connecting to the Database
+
+FL0 can automatically import database credentials into your Environment Variables for you!
+Just open your Application on FL0, navigate to the Environment Variables page and click the "Import database credentials" button.
+
+![Pasting environment variables in bulk](../platform/assets/environment-variables-import-db.gif)
 
 ## Feature & Terminology Comparison
 
@@ -46,117 +104,3 @@ You can always use a Dockerfile if your language is not covered under a build pa
 | Dart     | <span class="badge badge--success">Yes</span>          | <span class="badge badge--warning">Via Dockerfile</span> |
 | Elixir   | <span class="badge badge--success">Yes</span>          | <span class="badge badge--warning">Via Dockerfile</span> |
 | Bun      | <span class="badge badge--warning">Experimental</span> | <span class="badge badge--warning">Via Dockerfile</span> |
-
-## Pre-requisites
-
-Before we start the deployment process, we need to make sure we have a few things in place.
-
-### FL0 Account
-
-First, we need to make sure we have an account on FL0. If you don't have one, you can sign up for free at [fl0.com](https://fl0.cm).
-
-### Github Account with Admin Access
-
-Next, we need to make sure we have a Github account with admin access to the repo we want to deploy. This is because we will be linking our FL0 account to our Github account, so we can deploy our code directly from Github.
-
-### Environment Variables
-
-Finally, we need to make sure we have all of our environment variables needed for our application. We will need to manually unpack any dynamic environment variables, such as `${{shared.API_KEY}}`, **_as FL0 does not support them natively_**. We will also need to make sure we have all of our environment variables in one place, even if they are shared across multiple services.
-
-Once we have all of the above, nothing is stopping us from deploying our application to FL0!
-
-<!-- - Steps
-  - Auth into FL0
-  - Create a new project
-  - Create a new database
-  - Create a new service
-    - Link Github
-    - Select repo
-      - ? can we select a different branch?
-    - (Optional) Add env vars
-  - (Optional) Add env vars now instead
-    - Redeploy
-  - Test and Rejoice -->
-
-## Steps
-
-<!-- Once you're logged into your FL0 account, you should see a (beautiful) screen like this: -->
-
-Let's start at the beginning, and log into our FL0 account. Once we're logged in, we should see a (beautiful) screen like this:
-
-<!-- LINK FL0 Home Screen -->
-
-Now we can start deploying our application to FL0!
-
-### Create a New Project
-
-<!-- If you're just signing up now, you should be prompted to create a new workspace and project. If you're not, you can create a new project by clicking the `New Project` button on your workspace home screen. -->
-
-If this is your first time signing up for FL0, you should be prompted to create a new workspace and project. If you're not, you can create a new project by clicking the `New Project` button on your workspace home screen.
-
-<!-- LINK New Project -->
-
-After creating a new project, we can move on to the next step.
-
-### Create a New Database
-
-Since our app is probably going to require some sort of way to persist data, we should create a new database first. We can do this by clicking the `Add New` dropdown and selecting `Postgres Database`. Give a name to your database, and click the Create button. And voila! We have a new database.
-
-<!-- LINK New Database Creation -->
-
-If you head over to the `Connection Info` tab, you should see all of the information you need to connect to your database.
-
-### Create a New Service
-
-Now that we have a database, we can create a new service. We can do this by clicking the `Add New` dropdown and selecting `Application`. We will be prompted to link our Github account, so we can deploy our code directly from Github.
-
-<!-- LINK Github Linking -->
-
-Once we link our Github account, we can select the repo we want to deploy and click `Connect`
-
-<!-- LINK Repo Selection -->
-
-We can now give a custom name to our service and select which branch we want to deploy. We can also optionally add any environment variables we need for our application. We can do this by clicking the `Add Environment Variables` button. Let's do that now.
-
-<!-- LINK Env Var Creation -->
-
-**One thing to note is that our application needs to listen on the port number `$PORT` because FL0 will dynamically assign a port number to our application.**
-
-We can now finally deploy our application! We can do this by clicking the `Deploy your Application` button, sit back and watch the magic happen.
-
-### Add more Environment Variables
-
-Oh, no! We forgot to add some environment variables! No worries, we can add them now. We can do this by clicking the `+ Environment Variables` button. Let's do that now.
-
-<!-- LINK Env Var Creation -->
-
-Once we have added our environment variables, we must redeploy our application for the changes to take effect. We can do this by navigating to the `Deployments` tab, and clicking the `Deploy Manually` button.
-
-### Configure our Application
-
-Now that our application is deployed, we can configure how we want the deployment to behave. We can do this from the `Settings` tab.
-
-The first setting we can look at is the `Custom URL`. We can configure a custom unique subdomain for our application, given that someone else hasn't already beat us to the punch.
-
-If we look under the Scalability sub-section, we can configure two essential settings:
-
-1. Compute
-2. Auto Scaling
-
-The `Compute` setting allows us to configure how much CPU and RAM we want to allocate to our application. The `Auto Scaling` setting allows us to configure how many instances of our application we want to run. We can configure the minimum and maximum number of instances we want to run at any given time.
-
-- others
-
-  - Database Must be postgres
-  - Only one service per project
-  - Health check and health check timeout
-    - i think fl0 checks if the main process exits ??
-  - no Custom domains
-  - no private/internal networking b/n services
-  - ? no attachable volumes
-  - ? URL format differences
-
-- Limitations
-  - Only Postgres
-  - Only one service per project
-  - ? Might need to listen on $PORT
