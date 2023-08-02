@@ -1,0 +1,9 @@
+/getting-started/connecting-to-a-database /docs/getting-started;
+/getting-started/preparing-your-codebase /docs/getting-started;
+/getting-started/running-endpoints /docs/getting-started;
+/getting-started/setting-up-a-project /docs/getting-started;
+/how-tos/how-to-move-repositories /docs/guides/moving-repositories;
+/how-tos/how-to-set-up-a-dockerfile /docs/getting-started;
+/platform/apps /docs/platform/applications;
+/platform/projects /docs/platform/projects;
+/platform/workspaces /docs/platform/workspaces;

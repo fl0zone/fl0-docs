@@ -23,4 +23,3 @@ We can configure Spring to use the PORT env var as such, if the `PORT` environme
 ## Example Template
 
 An example of the Java Spring Boot with Maven Application can be found in the FL0 templates repository: [fl0zone/template-java-maven](https://github.com/fl0zone/template-java-maven).
-

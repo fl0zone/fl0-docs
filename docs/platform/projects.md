@@ -8,7 +8,29 @@ Projects sit inside a Workspace and are a great way to separate work into logica
 
 1. Team members & permissions
 2. Environments
-3. Apps and Databases
+3. Applications and Databases
+
+```mermaid
+flowchart
+    workspace1[Workspace]
+    project1[Project]
+    workspace1 --> project1
+    project1 --> app1
+    project1 --> db1
+    project1 --> app2
+    project1 --> db2
+    subgraph prod [Production]
+        class prod cssClass
+        app2[Application]
+        db2[Database]
+    end
+    subgraph dev [Development]
+        app1[Application]
+        db1[Database]
+    end
+    classDef highlight fill:#6de5df,color:#000;
+    class project1 highlight;
+```
 
 ### Creating Projects
 
@@ -17,6 +39,8 @@ New projects can be created inside a workspace by following these steps:
 1. Navigate to your Workspace Overview page
 2. Click the **New project** button
 3. Give your project a name
+
+![Create a project](./assets/create-project.png)
 
 ### Switching Projects
 
