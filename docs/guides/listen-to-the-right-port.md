@@ -16,7 +16,7 @@ flowchart LR
 
 ## What Happens If I Don't?
 
-If your application listens to a different port, like `3000``, FL0's load balancer won't be able to route traffic to your containers. Your app will start, but you'll see an error like the one below when testing your endpoints:
+If your application listens to a different port, like `3000`, FL0's load balancer won't be able to route traffic to your containers. Your app will start, but you'll see an error like the one below when testing your endpoints:
 
 ```
 upstream connect error or disconnect/reset before headers. reset reason: connection failure
