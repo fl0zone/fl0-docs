@@ -90,7 +90,7 @@ const config = {
             position: 'left',
             label: 'Docs',
           },
-          { to: 'https://blog.fl0.com', label: 'Blog', position: 'left' },
+          { to: 'https://www.fl0.com/blog', label: 'Blog', position: 'left' },
           {
             href: 'https://app.fl0.com',
             label: 'Platform',
@@ -133,7 +133,7 @@ const config = {
             items: [
               {
                 label: 'Blog',
-                to: 'https://blog.fl0.com',
+                to: 'https://www.fl0.com/blog',
               },
               {
                 label: 'GitHub',
