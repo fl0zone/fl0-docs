@@ -45,7 +45,7 @@ Instead of relying on FL0's [built-in language support](#built-in-language-suppo
 you can provide your own Dockerfile in the root of your repository.
 FL0 will create a container based on this Dockerfile and deploy it to your environment.
 
-Below are some example multi-stage Dockerfiles designed to work well locally and on FL0.
+Below is a multi-stage Dockerfile designed to work well locally and on FL0.
 They are split into the following stages:
 
 1. **build** stage is used to build a production version of your app
@@ -53,19 +53,27 @@ They are split into the following stages:
    It is designed to only contain production dependencies and be as small as possible.
    Assets from the build stage are copied into the production stage
 
+
+Make sure you change the first line to use your application's name if it is not called "app.go".
+
 ```bash title="/Dockerfile"
+ARG APP_NAME=app
+
 # Build stage
 FROM golang:1.19 as build
+ARG APP_NAME
+ENV APP_NAME=$APP_NAME
 WORKDIR /app
-COPY go.mod go.sum ./
+COPY . .
 RUN go mod download
-
-COPY *.go ./
-RUN go build -o /my-app
+RUN go build -o /$APP_NAME
 
 # Production stage
 FROM alpine:latest as production
+ARG APP_NAME
+ENV APP_NAME=$APP_NAME
 WORKDIR /root/
-COPY --from=build /my-app ./
-CMD [ "/my-app" ]
+COPY --from=build /$APP_NAME ./
+CMD ./$APP_NAME
+
 ```
