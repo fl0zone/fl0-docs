@@ -3,7 +3,7 @@
 
 # Go
 
-Deploying your Node.js app on FL0 is easy. Follow this guide to configure your codebase correctly.
+Deploying your Go app on FL0 is easy. Follow this guide to configure your codebase correctly.
 
 ## Listening to the Right Port
 
