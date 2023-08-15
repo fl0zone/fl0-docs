@@ -70,3 +70,15 @@ The buildpack will do the following:
 ## Example Template
 
 An example of the Java Spring Boot with Maven Application can be found in the FL0 templates repository: [fl0zone/template-java-maven](https://github.com/fl0zone/template-java-maven).
+
+## System Requirements
+
+To ensure your Spring Boot application starts up quickly and runs well, we reccommend at least `0.75 GB` and `0.75 vCPU` of Compute.
+
+:::warning
+Spring Boot applications will not have sufficient resources to run on the fl0 Free Tier.
+:::
+
+:::info
+To configure Compute, upgrade to the Pro tier. For details see the [Pricing & Plans](/docs/platform/pricing-plans#upgrading-a-workspace) page.
+:::
