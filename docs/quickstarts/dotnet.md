@@ -38,7 +38,7 @@ Instead of relying on FL0's [built-in language support](#built-in-language-suppo
 
 Below is an example multi-stage Dockerfile designed to work well locally and on FL0.
 
-```dockerfile
+```dockerfile title=/Dockerfile
 FROM mcr.microsoft.com/dotnet/sdk:6.0 as build
 WORKDIR /app
 
