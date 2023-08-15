@@ -21,5 +21,6 @@ We have created the following examples to get you started:
 - [.Net](/docs/quickstarts/dotnet#dockerfile-support)
 - [Go](/docs/quickstarts/go#dockerfile-support)
 - [Node.js](/docs/quickstarts/nodejs#dockerfile-support)
+- [PHP](/docs/quickstarts/php#with-comoser--apache)
 - [Python](/docs/quickstarts/python#dockerfile-support)
 - [Rust](/docs/quickstarts/rust#dockerfile-support)
