@@ -7,7 +7,7 @@ Built-in support for PHP without the need for a Dockerfile is coming soon!
 :::
 
 
-## With Comoser + Apache
+## With Composer + Apache
 
 ```Dockerfile
 # Use an official PHP Apache image as the base
