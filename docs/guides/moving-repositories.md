@@ -16,6 +16,7 @@ Before moving a repository it's important to understand the impact on your FL0 w
 5. Allow 10 minutes per application to complete the migration. Duration can depend on the following factors:
    1. Number of environment variables
    2. Duration of build process
+6. FL0 automatically generates unique URLs when you create a new application, which can be manually overridden. When migrating apps, make sure you update the new URL to match the old URL. 
 
 ### Moving the repository
 
@@ -25,6 +26,7 @@ Before moving a repository it's important to understand the impact on your FL0 w
 4. Create a new application in FL0, connecting it to the new repository location
 5. Restore the environment variables
 6. Run a new manual deployment to make the environment variables take effect
+7. Update the URL to match the old URL
 
 ### Moving the repository (zero downtime)
 
