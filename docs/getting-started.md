@@ -79,7 +79,10 @@ Regardless of the language you are deploying, there are a few things you need ch
     </div>
     <div class="card__body">
       <p>
-        FL0 recommends using a Dockerfile for most control. If you don't want to use a Dockerfile, make sure you've set up your codebase so FL0 knows how to build it. See our <a href="/docs/category/quickstarts/">quickstart guides</a> for more information.
+        FL0 recommends using a Dockerfile for most control. See our <a href="/docs/quickstarts/dockerfile">Dockerfile quickstart</a> for more information.
+      </p>
+      <p>
+        If you don't want to use a Dockerfile, make sure you've set up your codebase so FL0 knows how to build it. See our <a href="/docs/category/quickstarts/">quickstart guides</a> for more information.
       </p>
     </div>
   </div>

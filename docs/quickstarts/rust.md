@@ -41,7 +41,7 @@ FL0 will create a container based on this Dockerfile and deploy it to your envir
 
 Below is an example multi-stage Dockerfile designed to work well locally and on FL0.
 
-```dockerfile title=Dockerfile
+```dockerfile title=/Dockerfile
 # Leveraging the pre-built Docker images with
 # cargo-chef and the Rust toolchain
 FROM lukemathwalker/cargo-chef:latest-rust-1.65.0 AS chef
