@@ -23,4 +23,5 @@ We have created the following examples to get you started:
 - [Node.js](/docs/quickstarts/nodejs#dockerfile-support)
 - [PHP](/docs/quickstarts/php#with-composer--apache)
 - [Python](/docs/quickstarts/python#dockerfile-support)
+- [Ruby](/docs/quickstarts/ruby#dockerfile-support)
 - [Rust](/docs/quickstarts/rust#dockerfile-support)
