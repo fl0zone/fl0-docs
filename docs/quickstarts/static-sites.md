@@ -36,7 +36,7 @@ http {
 }
 ```
 
-```bash title="/mime-types.conf" showLineNumbers
+```bash title="/mime.types" showLineNumbers
 types {
   text/html html htm shtml;
   text/css css;
