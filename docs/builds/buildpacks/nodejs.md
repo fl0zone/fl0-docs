@@ -1,63 +1,31 @@
 ---
 ---
 
+import BuildArgumentsPartial from './partials/\_build-args-read-more.md'
+
 # Node.js
 
-Deploying your Node.js app on FL0 is easy. Follow this guide to configure your codebase correctly.
+The Node.js buildpack will automatically be applied as long as your project has one or more of the following:
 
-## Listening to the Right Port
+- A `.nvmrc` file
+- A `.node-version` file
+- A `package.json` file
+- The `BP_NODE_VERSION` [build argument](/docs/platform/builds-deployments) set
 
-FL0 injects an environment variable called PORT into your application's container. Your app must listen on this port. You can override this by providing a different value for `PORT` in the [Environment Variables](../platform/environment-variables) section of your application.
-
-Below are some examples of how to do this with popular frameworks.
-
-### Express
-
-```js title="/app.js"
-const express = require("express");
-const app = express();
-
-// This line is important to ensure your app listens to the PORT env var
-const port = process.env.PORT ?? 8080;
-
-app.listen(port, () => {
-  console.log(`App listening on port ${port}`);
-});
-```
-
-### NestJS
-
-```ts title="/src/main.ts"
-import { NestFactory } from "@nestjs/core";
-import { AppModule } from "./app.module";
-
-async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
-
-  // This line is important to ensure your app listens to the PORT env var
-  await app.listen(process.env.PORT, "0.0.0.0");
-  console.log(`Application is running on: ${await app.getUrl()}`);
-}
-bootstrap();
-```
-
-## Built-in Language Support
-
-You can build and deploy a Node.js application without a Dockerfile using FL0's automatic builds. To do this, ensure you have a `package.json` file in the root of your repo.
+## Features
 
 ### Specifying a Node Version
 
-FL0's build system checks the following files for a specified Node version, in this order:
+FL0's build system checks the following for a specified Node version:
 
 1. `package.json`
 2. `.nvmrc`
 3. `.node-version`
+4. [`BP_NODE_VERSION`](#bp_node_version) build argument
 
 ### Building From a Subdirectory
 
-:::info
-Support for subdirectories coming soon. Currently, your app must reside in the root directory of your repository.
-:::
+By default, FL0 assumes your application is in the root directory. To override this, set the [`BP_NODE_PROJECT_PATH`](#bp_node_project_path) build argument accordingly.
 
 ### Running Scripts During Build Phase
 
@@ -66,35 +34,7 @@ FL0 will look for a `package.json` file and run the following scripts, if they e
 1. `npm run build`
 2. `npm start`
 
-If no scripts are specified, FL0 will run the file specified in the `main` key in `package.json`.
-
-For example, the following `package.json` configuration will result in FL0 running `node ./src/index.js`:
-
-```json
-{
-  "name": "fl0-docs",
-  "version": "1.0.0",
-  "main": "./src/index.js",
-  ...
-}
-```
-
-:::info
-Support for additional scripts is coming soon.
-:::
-To run others build scripts, such as a `test` or `lint` script, please append these to your `build` or `start` script. For example:
-
-```json
-{
-  "name": "fl0-docs",
-  "version": "1.0.0",
-  "scripts": {
-    "lint": "eslint .",
-    "start": "npm run lint && node ./src/index.js"
-  }
-  ...
-}
-```
+You can specify other scripts to run by setting the [`BP_NODE_RUN_SCRIPTS`](#bp_node_run_scripts) build argument.
 
 ### Using NPM or Yarn
 
@@ -114,7 +54,54 @@ You can build a Node.js application that doesn't use NPM or `node_modules`. FL0 
 
 ### Build and Serve a Frontend App
 
-Frameworks like React and Angular come with development servers that can be used to serve the built HTML content. This means you can use `npm start` to run these frontend frameworks. However, in some cases it is recommended to build source code into static HTML/CSS/JS and serve them directly. In this case, check our documentation on [serving static sites](/docs/quickstarts/static-sites).
+Frameworks like React and Angular come with development servers that can be used to serve the built HTML content. This means you can use `npm start` to run these frontend frameworks. However, in some cases it is recommended to build source code into static HTML/CSS/JS and serve them directly. In this case, check our documentation on [serving static sites](/docs/builds/buildpacks/static-sites).
+
+## Build Arguments
+
+<BuildArgumentsPartial />
+
+### `BP_NODE_VERSION`
+
+The version of Node to install. [Supported versions](https://github.com/paketo-buildpacks/node-engine/releases/tag/v1.5.0).
+
+Example: `BP_NODE_VERSION=18.16.0`
+
+### `BP_NODE_OPTIMIZE_MEMORY`
+
+Node.js limits the total size of all objects on the heap. Enabling the optimize-memory feature sets this value to three-quarters of the total memory available in the container. For example, if your app is limited to 1 GB at run time, the heap of your Node.js app is limited to 768 MB.
+
+Example: `BP_NODE_OPTIMIZE_MEMORY=true`
+
+### `BP_NODE_PROJECT_PATH`
+
+By default, FL0 will build from the root directory. To choose a different folder, set this build argument. This is particularly useful if your application is part of a monorepo.
+
+Example: `BP_NODE_PROJECT_PATH=packages/my-app`
+
+### `BP_NODE_RUN_SCRIPTS`
+
+FL0 will check your `package.json` file for a `build` script and run that if present. Use this build argument to override the default behavior with a comma-separated list of scripts to run.
+
+Example: `BP_NODE_RUN_SCRIPTS=lint,build`
+
+### `BP_LAUNCHPOINT`
+
+If your application does not contain a `package.json`, FL0 will look for one of the following files and use it as the 'launchpoint':
+
+- `server.js`
+- `app.js`
+- `main.js`
+- `index.js`
+
+To specify a different launchpoint, set this build argument to the name of the file.
+
+Example: `BP_LAUNCHPOINT=./src/launchpoint.js`
+
+### `BP_LOG_LEVEL`
+
+Enable additional build logs by setting this build argument. This does not impact runtime logging of Node.js applications.
+
+Example: `BP_LOG_LEVEL=DEBUG`
 
 ## Dockerfile Support
 

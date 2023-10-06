@@ -1,0 +1,10 @@
+{
+  "label": "Getting Started",
+  "position": 2,
+  "collapsed": false,
+  "className": "margin-vert--md",
+  "link": {
+    "type": "doc",
+    "id": "getting-started/crash-course"
+  }
+}

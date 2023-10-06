@@ -1,0 +1,10 @@
+{
+  "label": "Builds",
+  "position": 3,
+  "collapsed": false,
+  "className": "margin-vert--md",
+  "link": {
+    "type": "doc",
+    "id": "builds/index"
+  }
+}

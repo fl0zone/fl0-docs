@@ -1,0 +1,1 @@
+Build Arguments let you configure how your application is built. There are many options depending on the language-specific buildpack. See the [documentation](/docs/platform/builds-deployments) page for more details on how to use Build Arguments.

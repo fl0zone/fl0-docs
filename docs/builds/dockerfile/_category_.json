@@ -1,0 +1,10 @@
+{
+  "label": "Dockerfile",
+  "position": 2,
+  "collapsed": true,
+  "className": "margin-vert--md",
+  "link": {
+    "type": "doc",
+    "id": "builds/dockerfile/index"
+  }
+}

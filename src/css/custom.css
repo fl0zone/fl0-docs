@@ -42,7 +42,7 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-font-family-monospace: "Inter";
+  /* --ifm-font-family-monospace: "Inter"; */
   --ifm-font-family-base: "Inter";
   --ifm-color-primary: #2e8555;
   --ifm-color-primary-dark: #29784c;

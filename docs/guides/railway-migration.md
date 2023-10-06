@@ -15,7 +15,7 @@ With Railway sunsetting their free tier, now is a great time to make use of FL0'
 
 Head over to the [FL0 platform](https://app.fl0.com), create an account and complete the onboarding. The platform will guide you through setting up your account and creating a project.
 
-![FL0 onboarding](../assets/onboarding.gif)
+![FL0 onboarding](../getting-started/assets/onboarding.gif)
 
 ### Create Your Databases
 

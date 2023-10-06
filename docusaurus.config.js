@@ -83,7 +83,7 @@ const config = {
           className: 'custom-navbar-logo-class',
         },
         items: [
-          { to: '/docs/getting-started', label: 'Getting Started', position: 'left' },
+          { to: '/docs/getting-started/crash-course', label: 'Getting Started', position: 'left' },
           {
             type: 'docSidebar',
             sidebarId: 'docsSidebar',
@@ -111,7 +111,7 @@ const config = {
             items: [
               {
                 label: 'Getting Started',
-                to: '/docs/getting-started',
+                to: '/docs/getting-started/crash-course',
               },
             ],
           },

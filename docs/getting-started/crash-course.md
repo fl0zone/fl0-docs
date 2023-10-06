@@ -1,12 +1,17 @@
 ---
-sidebar_position: 2
+slug: crash-course
+title: "Crash Course"
+tags:
+  - tutorial
+  - crash-course
+sidebar_position: 1
 ---
 
 import MotivationalSong from '@site/src/components/MotivationalSong';
 
-# Getting Started
+# Crash Course
 
-Buckle up, let's get something deployed on FL0 **in less than 5 minutes**.
+Buckle up, it's time to learn the basics of deploying on FL0 **in less than 5 minutes**.
 
 Here's what you'll need:
 
@@ -79,10 +84,10 @@ Regardless of the language you are deploying, there are a few things you need ch
     </div>
     <div class="card__body">
       <p>
-        FL0 recommends using a Dockerfile for most control. See our <a href="/docs/quickstarts/dockerfile">Dockerfile quickstart</a> for more information.
+        FL0 recommends using a Dockerfile for most control. See our <a href="/docs/builds/dockerfile">Dockerfile quickstart</a> for more information.
       </p>
       <p>
-        If you don't want to use a Dockerfile, make sure you've set up your codebase so FL0 knows how to build it. See our <a href="/docs/category/quickstarts/">quickstart guides</a> for more information.
+        If you don't want to use a Dockerfile, make sure you've set up your codebase so FL0 knows how to build it. See our <a href="/docs/builds/buildpacks/">quickstart guides</a> for more information.
       </p>
     </div>
   </div>
@@ -114,6 +119,10 @@ Once you have a successful deployment, you'll see a unique URL in the summary of
 
 ## Wrapping Up
 
-Nice work! You made it through the crash course on FL0. Be sure to check out our [quickstart guides](/docs/category/quickstarts/) for more language-specific help.
+Nice work! You made it through the crash course on FL0. Be sure to check out our other tutorials to get started with your specific language!
+
+- [Tutorial - Deploying a Database](./database)
+- [Tutorial - Deploying a Node.js app](./express)
+- [Buildpack Reference](/docs/builds//buildpacks)
 
 <iframe src="https://giphy.com/embed/sw2jHJepEyfoEYUToh" width="384" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/MotorTrend-top-gear-topgear-america-sw2jHJepEyfoEYUToh">The FL0 crash course</a></p>

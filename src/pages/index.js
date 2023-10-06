@@ -20,7 +20,7 @@ function HomepageHeader() {
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.buttons}>
           <Link
-            to="/docs/getting-started">
+            to="/docs/getting-started/crash-course">
             Get Started - 5min ⏱️
           </Link>
         </div>

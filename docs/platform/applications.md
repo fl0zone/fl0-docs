@@ -72,9 +72,27 @@ Once successfully deployed, you can access your app using the URL found on the *
 
 ### Environment Variables
 
-Environment variables are custom settings that can be passed into your app when FL0 builds and deploys it. These settings can have different values in Development and Production.
+Environment variables are custom settings that can be passed into your app when FL0 deploys it. These settings can have different values in Development and Production.
 
-Read more on the [Environment Variables](./environment-variables.md) page.
+Common scenarios where you might need to use Environment Variables include:
+
+1. Storing database credentials
+2. Storing other sensitive information that you don't want stored in Git
+3. Configuring environment-specific settings, like log levels or debug modes
+
+![Environment Variables](./assets/environment-variables.png)
+
+To set Environment Variables:
+
+1. Navigate to your application and click on the **Environment Variables** tab. Make sure you're in the correct Environment (dev or prod)
+2. Add a new row to the table by clicking the **Add new variable** button
+3. Give the variable a name. Names can only include alpha-numeric characters or underscores
+4. Set a value for the variable. Optionally mark it as secret, so it can't be read by others
+5. Click the **Save** or **Save and deploy** button. Changes to Environment Variables will not take effect until the next deployment
+
+:::caution
+Secret environment variables can still be read by your application. Developers must be careful to not write secret environment variables to logs or output them in any way.
+:::
 
 ### Viewing Logs
 
@@ -83,6 +101,12 @@ Logs from the containers running your apps can be found on the **Logs** tab.
 1. If multiple containers are running, you can select the instance (container) to view from the dropdown
 2. You can download logs from a specific date range by clicking the **Download logs** button
 
-### Scaling Apps
+### Scaling Applications
 
-FL0 is configured to automatically scale the number of containers running your app depending on CPU and memory usage.
+Application CPU and RAM can be scaled up and down depending on your requirements.
+Navigate to **Settings > Scalability** inside your application adjust the defaults.
+
+- **Compute:** The amount of CPU and RAM to give each instance of your application.
+- **Autoscaling:** FL0 can automatically scale your app horizontally when the CPU reaches an average of 70%. You can set limits on the min and max number of instances
+
+![App scaling](./assets/app-scaling.png)

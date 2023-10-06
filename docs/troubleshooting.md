@@ -17,7 +17,7 @@ If your deployment fails, you will see an error with one of the stages below.
 ### Build stage
 
 1. There was a problem building from your Dockerfile. Ensure your Dockerfile runs locally and check the logs in FL0
-2. FL0 could not auto-detect your codebase. Check our language-specific [quickstart guides](/docs/category/quickstarts) for more details
+2. FL0 could not auto-detect your codebase. Check our language-specific [quickstart guides](/docs/builds/buildpacks) for more details
 3. There was a problem auto-building your codebase. Check the build logs for more details
 
 ### Deploy stage

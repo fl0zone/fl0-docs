@@ -47,7 +47,7 @@ The `database` resource exists in both environments, but the data and settings a
 
 ## Deploying Between Environments
 
-Visit the [Deployments](./deployments) page to read more about moving resources between environments.
+Visit the [Deployments](./builds-deployments) page to read more about moving resources between environments.
 
 ## Networking
 
