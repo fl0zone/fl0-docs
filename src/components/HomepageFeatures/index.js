@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 const FeatureList = [
   {
     title: 'Quickstart Guides',
-    link: '/docs/category/quickstarts',
+    link: '/docs/builds/buildpacks',
     Svg: require('@site/static/img/quickstart-icon.svg').default,
     description: (
       <>
