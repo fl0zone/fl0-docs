@@ -17,6 +17,6 @@ export default function MotivationalSong({ children }) {
 
     const song = getRandomSong();
     return (
-        <a href={song} target="_blank">{children}</a>
+        <a href={song} rel="noreferrer" target="_blank">{children}</a>  // Most Browsers Automatically Imply rel=“noopener”
     );
 }
