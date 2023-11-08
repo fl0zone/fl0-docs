@@ -104,3 +104,8 @@ html[data-theme='dark'] {
 .header-community-link svg {
   display: none;
 }
+
+.footer-community-link svg {
+  margin-right: 0.3rem;
+  margin-bottom: -0.1rem;
+}
