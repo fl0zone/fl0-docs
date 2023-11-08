@@ -101,6 +101,13 @@ const config = {
             label: 'GitHub',
             position: 'right',
           },
+          {
+            href: 'https://discord.gg/QPXqWK3bVw',
+            label: 'Support & Community',
+            position: 'right',
+            className: 'header-community-link',
+
+          },
         ],
       },
       footer: {
@@ -123,7 +130,7 @@ const config = {
                 href: 'https://www.linkedin.com/company/fl0',
               },
               {
-                label: 'Support - Discord',
+                label: 'Support - Community',
                 href: 'https://discord.gg/QPXqWK3bVw',
               },
             ],
