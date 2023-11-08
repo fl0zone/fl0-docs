@@ -1,7 +1,7 @@
 {
-  "index_name": "dev_fl0_docs",
-  "start_urls": ["https://documentation-dev.fl0.io"],
-  "sitemap_urls": ["https://documentation-dev.fl0.io/sitemap.xml"],
+  "index_name": "prod_fl0_docs",
+  "start_urls": ["https://docs.fl0.com"],
+  "sitemap_urls": ["https://docs.fl0.com/sitemap.xml"],
   "sitemap_alternate_links": true,
   "selectors": {
     "lvl0": {

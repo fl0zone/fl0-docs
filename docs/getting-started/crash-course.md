@@ -42,53 +42,43 @@ We currently support Github. If you use another provider, drop us a comment belo
 Regardless of the language you are deploying, there are a few things you need check before deploying on FL0.
 
 <div>
-  <div class="card">
-    <div class="card__header">
+  <div className="card">
+    <div className="card__header">
       <h3>1. Check the supported scenarios</h3>
     </div>
-    <div class="card__body">
-      <p>
-        Make sure what you're deploying will work by checking our list of <a href="/docs/supported-scenarios">supported scenarios</a>
-      </p>
+    <div className="card__body">
+      Make sure what you're deploying will work by checking our list of <a href="/docs/supported-scenarios">supported scenarios</a>
     </div>
   </div>
 </div>
-<div class="margin-top--md">
-  <div class="card">
-    <div class="card__header">
+<div className="margin-top--md">
+  <div className="card">
+    <div className="card__header">
       <h3>2. Listen to the right port</h3>
     </div>
-    <div class="card__body">
-      <p>
+    <div className="card__body">
         FL0 routes traffic to your app using the <code>PORT</code> environment variable. Your app should listen to this port.
-      </p>
     </div>
   </div>
 </div>
-<div class="margin-top--md">
-  <div class="card">
-    <div class="card__header">
+<div className="margin-top--md">
+  <div className="card">
+    <div className="card__header">
       <h3>3. Set your environment variables</h3>
     </div>
-    <div class="card__body">
-      <p>
+    <div className="card__body">
         If your app needs certain environment variables to run, set them up before you deploy. Otherwise your app will crash on startup.
-      </p>
     </div>
   </div>
 </div>
-<div class="margin-top--md">
-  <div class="card">
-    <div class="card__header">
+<div className="margin-top--md">
+  <div className="card">
+    <div className="card__header">
       <h3>4. Supply a Dockerfile (optional)</h3>
     </div>
-    <div class="card__body">
-      <p>
-        FL0 recommends using a Dockerfile for most control. See our <a href="/docs/builds/dockerfile">Dockerfile quickstart</a> for more information.
-      </p>
-      <p>
+    <div className="card__body">
+        FL0 recommends using a Dockerfile for most control. See our <a href="/docs/builds/dockerfile">Dockerfile quickstart</a> for more information.<br/>
         If you don't want to use a Dockerfile, make sure you've set up your codebase so FL0 knows how to build it. See our <a href="/docs/builds/buildpacks/">quickstart guides</a> for more information.
-      </p>
     </div>
   </div>
 </div>
@@ -125,4 +115,4 @@ Nice work! You made it through the crash course on FL0. Be sure to check out our
 - [Tutorial - Deploying a Node.js app](./express)
 - [Buildpack Reference](/docs/builds//buildpacks)
 
-<iframe src="https://giphy.com/embed/sw2jHJepEyfoEYUToh" width="384" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/MotorTrend-top-gear-topgear-america-sw2jHJepEyfoEYUToh">The FL0 crash course</a></p>
+<iframe src="https://giphy.com/embed/sw2jHJepEyfoEYUToh" width="384" height="480" frameBorder="0" className="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/MotorTrend-top-gear-topgear-america-sw2jHJepEyfoEYUToh">The FL0 crash course</a></p>
