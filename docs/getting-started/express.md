@@ -147,11 +147,14 @@ const pool = new pg.Pool({
 });
 
 export const bootstrap = async () => {
-  const res = await query("SELECT * from contacts");
-  if (!res.rowCount) {
-    console.log("Bootstrapping database");
-    const schema = fs.readFileSync("db/schema.sql");
-    await query(schema.toString("utf-8"));
+  // Check if "contacts" table exists
+  const checkTableQuery = "SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'contacts');";
+  const tableExistsResult = await query(checkTableQuery);
+
+  if (!tableExistsResult.rows[0].exists) {
+    console.log('Bootstrapping database');
+    const schema = fs.readFileSync('db/schema.sql');
+    await query(schema.toString('utf-8'));
   }
 };
 
