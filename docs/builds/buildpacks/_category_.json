@@ -2,7 +2,6 @@
   "label": "Buildpacks",
   "position": 1,
   "collapsed": false,
-  "className": "margin-vert--md",
   "link": {
     "type": "doc",
     "id": "builds/buildpacks/index"

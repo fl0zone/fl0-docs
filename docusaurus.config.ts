@@ -81,10 +81,16 @@ const config: Config = {
           position: "left",
         },
         {
-          type: "docSidebar",
-          sidebarId: "docsSidebar",
+          type: "doc",
           position: "left",
+          docId: "introduction",
           label: "Docs",
+        },
+        {
+          type: "docSidebar",
+          position: "left",
+          sidebarId: "nestSidebar",
+          label: "NestJS",
         },
         { to: "https://www.fl0.com/blog", label: "Blog", position: "left" },
         {

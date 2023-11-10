@@ -45,6 +45,7 @@
   /* --ifm-font-family-monospace: "Inter"; */
   --ifm-font-family-base: "Inter";
   --ifm-color-primary: #2e8555;
+  --ifm-color-nest: #ed2945;
   --ifm-color-primary-dark: #29784c;
   --ifm-color-primary-darker: #277148;
   --ifm-color-primary-darkest: #205d3b;
@@ -62,6 +63,7 @@
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 html[data-theme='dark'] {
   --ifm-color-primary: #6de5df;
+  --ifm-color-nest: #ed2945;
   --ifm-color-primary-dark: #50e0d9;
   --ifm-color-primary-darker: #42ddd6;
   --ifm-color-primary-darkest: #24c9c1;
@@ -112,4 +114,9 @@ html[data-theme='dark'] {
 .footer-community-link svg {
   margin-right: 0.3rem;
   margin-bottom: -0.1rem;
+}
+
+/* NestJS */
+html[class*="docs-doc-id-nestjs"] {
+  --ifm-color-primary: var(--ifm-color-nest);
 }
