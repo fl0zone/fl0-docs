@@ -142,7 +142,7 @@ const config: Config = {
             },
             {
               label: "GitHub",
-              href: "https://github.com/fl0zone/fl0-docs",
+              href: "https://github.com/fl0zone/",
             },
           ],
         },
