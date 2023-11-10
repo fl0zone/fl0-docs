@@ -114,15 +114,9 @@ To connect to the database, we need a database client. There are many clients an
 npm install pg
 ```
 
-We'll need some data to play with, so create a file called `db/schema.sql` and fill it with this SQL:
+We'll need some data to play with, so create a file called `db/data.sql` and fill it with this SQL:
 
-```sql title="db/schema.sql"
-create table IF NOT EXISTS contacts (
-	first_name VARCHAR(50),
-	last_name VARCHAR(50),
-	email VARCHAR(50),
-	phone VARCHAR(50)
-);
+```sql title="db/data.sql"
 insert into contacts (first_name, last_name, email, phone) values ('Nessie', 'Aris', 'naris0@bandcamp.com', '298-108-5883');
 insert into contacts (first_name, last_name, email, phone) values ('Sullivan', 'Shoorbrooke', 'sshoorbrooke1@pinterest.com', '144-695-5915');
 insert into contacts (first_name, last_name, email, phone) values ('Elyn', 'Mangam', 'emangam2@google.ca', '494-744-4973');
@@ -147,11 +141,21 @@ const pool = new pg.Pool({
 });
 
 export const bootstrap = async () => {
-  const res = await query("SELECT * from contacts");
-  if (!res.rowCount) {
+  // Create the 'contacts' table if it doesn't exist yet
+  await query(`
+    create table IF NOT EXISTS contacts (
+        first_name VARCHAR(50),
+        last_name VARCHAR(50),
+        email VARCHAR(50),
+        phone VARCHAR(50)
+    );`);
+
+  // Bootstrap the 'contacts' table with sample data if it is empty
+  const contacts = await query("SELECT * from contacts");
+  if (!contacts.rowCount) {
     console.log("Bootstrapping database");
-    const schema = fs.readFileSync("db/schema.sql");
-    await query(schema.toString("utf-8"));
+    const data = fs.readFileSync("db/data.sql");
+    await query(data.toString("utf-8"));
   }
 };
 
@@ -197,7 +201,7 @@ Your folder structure should look like this:
 fl0-express-tutorial
 ├── db
 │   ├── index.js
-│   └── schema.sql
+│   └── data.sql
 ├── index.js
 ├── node_modules
 ├── package-lock.json
