@@ -1,6 +1,7 @@
 {
   "name": "fl0-docs",
   "version": "0.0.0",
+  "license": "CC-BY-NC-SA-4.0",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
