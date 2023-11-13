@@ -80,6 +80,8 @@ const config = {
         logo: {
           alt: 'FL0 Documentation',
           src: 'img/logo.svg',
+          width: 69,
+          height: 24,
           className: 'custom-navbar-logo-class',
         },
         items: [
