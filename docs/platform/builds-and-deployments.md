@@ -6,6 +6,7 @@ slug: builds-deployments
 # Builds & Deployments
 
 In FL0, a build is the process of taking your code and turning it into a container image. A deployment is the act of moving that container into your cluster.
+
 To find your application's build settings, open your application in FL0 and navigate to **Settings > Build**.
 
 ## Configuring Build Settings
@@ -109,4 +110,22 @@ The final stage is responsible for deploying your container's image to your FL0 
 2. Boots your application
 3. Runs health-checks to determine if your application started successfully
 
-The Deploy stage may fail if your application crashes on startup or if FL0 is not able to connect to it over the specified port. To troubleshoot a failed deployment, navigate to the **Logs** tab of your application to see if any errors were generated. Double-check the port you are listening to and check our [troubleshooting guide](/docs/troubleshooting) for more details.
+The Deploy stage may fail if your application crashes on startup or if FL0 is not able to connect to it over the specified port. To troubleshoot a failed deployment, navigate to the **Logs** tab of your application to see if any errors were generated. Double-check the port you are listening to and check our [troubleshooting guide](/docs/troubleshooting/) for more details.
+
+## Pausing Deployments
+
+You can pause an Application or Worker deployment to avoid consuming resources and incurring costs.
+
+:::note
+Pausing does not affect any databases connected to your app.
+:::
+
+While paused, an Application or Worker will not not:
+ - use any CPU or RAM resources
+ - respond to any requests
+ - run any background processes
+ - support manual or automatic deployment
+
+You can unpause at any time to resume activity using the most recent app deployment.
+
+To view or change your app's pause status, navigate to **Settings > General**.
