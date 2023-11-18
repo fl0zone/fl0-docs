@@ -1,0 +1,86 @@
+// npx cspell .
+{
+    // Version of the setting file.  Always 0.2
+    "version": "0.2",
+
+    // language - current active spelling language
+    "language": "en",
+
+    "caseSensitive": true,
+
+    // words - list of words to be always considered correct
+    "words": [
+        "Appsmith",
+        "ASGI",
+        "axum",
+        "Bellsoft",
+        "buildmode",
+        "buildpack",
+        "buildpacks",
+        "Deno",
+        "Dockerfiles",
+        "dotnet",
+        "DskipTool",
+        "FL0",
+        "frontends",
+        "GOPATH",
+        "gradlew",
+        "Gunicorn",
+        "launchpoint",
+        "ldflags",
+        "LDFLAGS",
+        "Lein",
+        "LEIN",
+        "Liberica",
+        "linux",
+        "nginx",
+        "Nixpacks",
+        "noopener",
+        "noreferrer",
+        "Paketo",
+        "PGAdmin",
+        "Pipenv",
+        "postgres",
+        "Prisma",
+        "Procfile",
+        "quickstart",
+        "runtimeconfig",
+        "schema.prisma",
+        "Starlette",
+        "sunsetting",
+        "Tomee",
+        "tomee",
+        "uvicorn",
+        "Uvicorn",
+        "WebSockets",
+        "WSGI"
+    ],
+
+    // flagWords - list of words to be always considered incorrect
+    // This is useful for offensive words and common spelling errors.
+    "flagWords": [
+        "hte"
+    ],
+
+    // a list of globs to specify which files are to be ignored.
+    "ignorePaths": [
+        "docusaurus.config.ts",
+        "node_modules/**",
+        "src/css/**",
+        "static/**",
+        "*.js",
+        "*.json"
+    ],
+
+    // patterns to ignore
+    "ignoreRegExpList": [
+        // YAML front matter block
+        "/^---\\n.*?---\\n/gm",
+    
+        // Code fences
+        "/^\\s*```(.|\\n)+?^\\s*```/gm",
+
+        // iframes
+        "/^<iframe.*?>.*?</iframe>/gm"
+    ]
+}

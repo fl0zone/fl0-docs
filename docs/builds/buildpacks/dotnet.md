@@ -57,7 +57,7 @@ Set the framework version as follows:
 
 By default, FL0 will look in the root folder for the .NET project. This directory needs to contain a C#, F# or VB Project file. If your project is located in a subdirectory, you can use the [`BP_DOTNET_PROJECT_PATH`](#bp_dotnet_project_path) build argument to override the default path.
 
-### Configuring the `dotnet pyblish` Command
+### Configuring the `dotnet publish` Command
 
 FL0 uses the `dotnet publish` command with the following default flags:
 

@@ -96,7 +96,7 @@ public static IHostBuilder CreateHostBuilder(string[] args) =>
     app.run(args);
 ```
 
-## Rust - axom
+## Rust - axum
 
 ```rust title=src/main.rs
 // read the port from env vars.

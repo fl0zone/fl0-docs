@@ -45,7 +45,7 @@ Example: `BP_GO_BUILD_LDFLAGS="-X main.variable=some-value`
 
 Use this build argument to specify a target other than the root directory.
 
-Example: `BP_GO_TARGETS=./my-other-pacakge`
+Example: `BP_GO_TARGETS=./my-other-package`
 
 ### `BP_GO_BUILD_IMPORT_PATH`
 

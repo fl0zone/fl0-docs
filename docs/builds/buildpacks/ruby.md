@@ -19,7 +19,7 @@ FL0's build system will attempt to automatically detect the correct version of R
 5. 3.0.6
 6. 3.0.5
 
-To change your Ruby version, ensure that one of the above versions are specified in your `Gemfile`. For example, add the following to the `Genmfile`:
+To change your Ruby version, ensure that one of the above versions are specified in your `Gemfile`. For example, add the following to the `Gemfile`:
 ```
 ruby "3.2.2"
 ```
@@ -47,7 +47,7 @@ To create credentials for your production environment, run the following command
 EDITOR="mate --wait" bin/rails credentials:edit
 ```
 This will generate the following files:
-1. `config/cretentials.yml.enc`; and
+1. `config/credentials.yml.enc`; and
 2. `config/master.key`
 
 Add the key `RAILS_MASTER_KEY` as an Environment Variable in FL0, with the content of your `master.key` file as its corresponding value.
