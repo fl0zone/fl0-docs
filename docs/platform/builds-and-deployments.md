@@ -19,14 +19,14 @@ You can adjust how FL0 builds your application. There are two methods you can us
 
 FL0 buildpacks currently support the following languages:
 
-- Java
-- Node.js
-- .NET Core
-- Go
-- Web Servers/Static Sites (HTTPD and Nginx)
-- Python
-- PHP
-- Ruby
+- [.NET Core](/docs/builds/buildpacks/dotnet-core)
+- [Go](/docs/builds/buildpacks/go)
+- [Java](/docs/builds/buildpacks/java)
+- [Node.js](/docs/builds/buildpacks/nodejs)
+- [PHP](/docs/builds/buildpacks/php)
+- [Python](/docs/builds/buildpacks/python)
+- [Ruby](/docs/builds/buildpacks/ruby)
+- [Web Servers/Static Sites](/docs/builds/buildpacks/static-sites) (HTTPD and Nginx)
 
 For other languages, please build using a [Dockerfile](#dockerfile).
 
@@ -83,7 +83,7 @@ Once a build is kicked off, it will go through three distinct stages as describe
 
 ### Setup
 
-In this stage, FL0 prepares your codebase for build. If you see any problems with the Setup stage, please contact FL0 support.
+In this stage, FL0 prepares your codebase for build. If you see any problems with the Setup stage, please [contact FL0 support](https://discord.gg/QPXqWK3bVw).
 
 ### Build
 
@@ -107,6 +107,14 @@ The final stage is responsible for deploying your container's image to your FL0 
 
 1. Pulls your image from the registry and creates new instances
 2. Boots your application
-3. Runs health-checks to determine if your application started successfully
+3. Runs health checks to determine if your application started successfully
 
-The Deploy stage may fail if your application crashes on startup or if FL0 is not able to connect to it over the specified port. To troubleshoot a failed deployment, navigate to the **Logs** tab of your application to see if any errors were generated. Double-check the port you are listening to and check our [troubleshooting guide](/docs/troubleshooting) for more details.
+The Deploy stage may fail if your application crashes on startup or if FL0 is not able to connect to it over the specified port.
+
+:::note
+A background application that does not listen to a port should be deployed as a Worker.
+:::
+
+## Troubleshooting
+
+To troubleshoot a failed deployment, navigate to the **Logs** tab of your application to see if any errors were generated. Double-check the port your Application is listening to and check our [troubleshooting guide](/docs/troubleshooting) for more details.
