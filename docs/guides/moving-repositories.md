@@ -9,7 +9,7 @@ If you need to move your Git repo between organizations, you will need to reconf
 
 Before moving a repository it's important to understand the impact on your FL0 workspace:
 
-1. A FL0 workspace can be connected to mulitple Github organization at a time
+1. A FL0 workspace can be connected to multiple Github organization at a time
 2. You cannot change the repository connected to a FL0 application, it must be deleted and recreated
 3. Deleting and recreating a application will involve downtime unless you run both alongside each other with different names
 4. While transferring the repository it will not be possible to push code changes to the application from the point the repo is moved to the point the FL0 application is reconnected

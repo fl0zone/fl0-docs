@@ -25,7 +25,7 @@ To use an HTTPD web server, either add an `httpd.conf` to the root of your repo 
 
 ### `BP_WEB_SERVER`
 
-Accepts a value of either `httpd` or `nginx.`
+Accepts a value of either `httpd` or `nginx`.
 
 Example: `BP_WEB_SERVER=nginx`.
 
