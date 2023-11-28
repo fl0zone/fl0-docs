@@ -120,9 +120,9 @@ Navigate to **Settings > Scalability** inside your application adjust the defaul
 
 ![App scaling](./assets/app-scaling.png)
 
-## Pausing Deployments
+## Pausing Applications
 
-You can pause an Application or Worker deployment to avoid consuming resources and incurring costs.
+You can pause an Application or Worker to avoid consuming resources and incurring costs.
 
 :::info note
 Pausing does not affect any databases connected to your app.
@@ -138,11 +138,11 @@ You can unpause at any time to resume activity using the most recent app deploym
 
 To view or change your app's pause status, navigate to **Settings > General**.
 
-### Auto-Pausing on the Free Tier
+### Auto-Pausing in Free Workspaces
 
-The FL0 free tier is intended to be used for development and evaluation purposes.
+Free workspaces on FL0 are intended to be used for development and evaluation purposes.
 
-Applications and Worker services running on the free tier will be automatically paused (with email notification) if they have not been viewed via the FL0 platform within 24 hours. Auto-paused services can be manually restarted.
+Applications and Worker services running in free workspaces will be automatically paused (with email notification) if they have not been viewed via the FL0 platform within 24 hours. Auto-paused services can be manually restarted.
 
 :::tip
 Services running in Pro or other paid tiers will not be automatically paused, but can still be manually paused to save on resource costs.
