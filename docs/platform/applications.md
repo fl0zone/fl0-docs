@@ -43,45 +43,26 @@ flowchart
     click db1,db2 "/docs/platform/databases"
 ```
 
-### Creating Applications
+## Creating Applications
 
-#### Requirements
+### Requirements
 
 In order to create an app in FL0, you must have the following:
 
 1. Your code stored in a Github repository
 2. Admin permissions to the Github organization
 
-#### Connecting to Github
+### Connecting to Github
 
 See the section on [Connecting a Workspace to Github](/docs/platform/workspaces.md#connecting-a-workspace-to-github).
 
-#### Naming the App
+### Naming the App
 
 The name you give your app will become part of the hostname of the app. See the section on [Using the App](#using-the-app) for more information.
 
-#### Automatic vs Manual Deployments
+### Automatic vs Manual Deployments
 
 By default, FL0 is configured to automatically deploy the latest version your app whenever a commit is pushed to your chosen branch. You can also choose to manually deploy your code based on a nominated branch or commit hash.
-
-#### Configuring Environment Variables
-
-See the section below on [Environment Variables](#environment-variables).
-
-### Using the App
-
-Every app is given a unique URL that is comprised of the following elements:
-
-```
-https://{{app-name}}-{{unique-identifier}}-{{environment}}.fl0.io
-```
-
-1. `{{app-name}}` is the name you chose when creating the app
-2. `{{unique-identifier}}` is a randomly generated 4 character string
-3. `{{environment}}` refers to the environment in which the app is deployed
-   1. The same app will have a different URL in Development vs Production
-
-Once successfully deployed, you can access your app using the URL found on the **App Overview** page.
 
 ### Environment Variables
 
@@ -107,6 +88,21 @@ To set Environment Variables:
 Secret environment variables can still be read by your application. Developers must be careful to not write secret environment variables to logs or output them in any way.
 :::
 
+## Using Applications
+
+Every app is given a unique URL that is comprised of the following elements:
+
+```
+https://{{app-name}}-{{unique-identifier}}-{{environment}}.fl0.io
+```
+
+1. `{{app-name}}` is the name you chose when creating the app
+2. `{{unique-identifier}}` is a randomly generated 4 character string
+3. `{{environment}}` refers to the environment in which the app is deployed
+   1. The same app will have a different URL in Development vs Production
+
+Once successfully deployed, you can access your app using the URL found on the **App Overview** page.
+
 ### Viewing Logs
 
 Logs from the containers running your apps can be found on the **Logs** tab.
@@ -123,3 +119,31 @@ Navigate to **Settings > Scalability** inside your application adjust the defaul
 - **Autoscaling:** FL0 can automatically scale your app horizontally when the CPU reaches an average of 70%. You can set limits on the min and max number of instances
 
 ![App scaling](./assets/app-scaling.png)
+
+## Pausing Applications
+
+You can pause an Application or Worker to avoid consuming resources and incurring costs.
+
+:::info note
+Pausing does not affect any databases connected to your app.
+:::
+
+While paused, an Application or Worker will not not:
+ - use any CPU or RAM resources
+ - respond to any requests
+ - run any background processes
+ - support manual or automatic deployment
+
+You can unpause at any time to resume activity using the most recent app deployment.
+
+To view or change your app's pause status, navigate to **Settings > General**.
+
+### Auto-Pausing in Free Workspaces
+
+Free workspaces on FL0 are intended to be used for development and evaluation purposes.
+
+Applications and Worker services running in free workspaces will be automatically paused (with email notification) if they have not been viewed via the FL0 platform within 24 hours. Auto-paused services can be manually restarted.
+
+:::tip
+Services running in Pro or other paid tiers will not be automatically paused, but can still be manually paused to save on resource costs.
+:::

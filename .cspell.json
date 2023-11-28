@@ -17,6 +17,7 @@
         "buildmode",
         "buildpack",
         "buildpacks",
+        "chatbots",
         "Deno",
         "Dockerfiles",
         "dotnet",

@@ -43,7 +43,7 @@ flowchart
     click db1,db2 "/docs/platform/databases"
 ```
 
-### Creating Projects
+## Creating Projects
 
 New projects can be created inside a workspace by following these steps:
 
@@ -53,11 +53,11 @@ New projects can be created inside a workspace by following these steps:
 
 ![Create a project](./assets/create-project.png)
 
-### Switching Projects
+## Switching Projects
 
 To see a list of all your projects, and switch between them, navigate to the Workspace Overview page by clicking the Workspace name in the breadcrumbs.
 
-### Managing Apps and Environments
+## Managing Apps and Environments
 
 Each project comes with 2 environments by default; Development and Production. Environments are segregated from each other, meaning apps cannot communicate across environments.
 
@@ -65,4 +65,4 @@ Environments are displayed on the Project Overview page as columns. Each box ins
 
 ### Creating Environments
 
-Currently FL0 supports 2 environments by default. To request additional environments please contact the FL0 team.
+Currently FL0 supports 2 environments by default: **Development** and **Production**. To request additional environments, please [contact the FL0 team](https://www.fl0.com/contact).
