@@ -90,18 +90,34 @@ Secret environment variables can still be read by your application. Developers m
 
 ## Using Applications
 
-Every app is given a unique URL that is comprised of the following elements:
+### Application URL
+
+Every application is given a unique URL. Once successfully deployed, you can access your app using the URL found on the **App Overview** page.
+
+:::info note
+Workers do not not listen to any network ports and will not be assigned a URL.
+:::
+
+For **Development** applications, the URL pattern is:
 
 ```
-https://{{app-name}}-{{unique-identifier}}-{{environment}}.fl0.io
+https://{app-name}-dev-{unique-identifier}.{region}.fl0.io
+```
+
+1. `{{app-name}}` is the name you chose when creating the app
+2. `dev` indicates `Development` environment
+3. `{{unique-identifier}}` is a randomly generated 4 character string
+4. `{{region}}` indicates the regional location of the app -- a numeric prefix followed by a [location identifier](/docs/platform/networking) (eg: `4.us-1`)
+
+For **Production** applications, the URL pattern is:
+
+```
+https://{app-name}-{unique-identifier}.{region}.fl0.io
 ```
 
 1. `{{app-name}}` is the name you chose when creating the app
 2. `{{unique-identifier}}` is a randomly generated 4 character string
-3. `{{environment}}` refers to the environment in which the app is deployed
-   1. The same app will have a different URL in Development vs Production
-
-Once successfully deployed, you can access your app using the URL found on the **App Overview** page.
+3. `{{region}}` indicates the regional location of the app -- a numeric prefix followed by a [location identifier](/docs/platform/networking) (eg: `4.us-1`)
 
 ### Viewing Logs
 
