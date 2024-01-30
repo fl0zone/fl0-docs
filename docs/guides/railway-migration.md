@@ -3,11 +3,7 @@
 
 # Migrating from Railway
 
-With Railway sunsetting their free tier, now is a great time to make use of FL0's free plan. It's perfect if you're:
-
-1. Deploying web services - frontend or backend
-2. Not requiring a custom domain
-3. Not using a monorepo (but they'll be supported soon!)
+With Railway sunsetting their free tier, now is a great time to make use of FL0's free plan. It's perfect if you're deploying web services - frontend or backend.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/9BiJjrPzPi0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
