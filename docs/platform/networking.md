@@ -4,6 +4,46 @@ sidebar_position: 9
 
 # Networking
 
+## Custom Domains
+:::tip[Pro Feature]
+Upgrade to Pro to use **Custom Domains**
+:::
+If you already own a domain and would like to connect it to a service running on FL0. FL0 handles the provisioning of a TLS certificate automatically.
+
+![Custom domains](./assets/custom-domains.png)
+
+### Setting up a custom domain
+To set up a custom domain, follow these steps:
+1. Navigate to your application
+2. Click on the Settings tab
+3. Click on the Custom Domains menu item on the left-hand side
+4. Type your domain into the text field and press "Save"
+5. Copy the `CNAME` record that appears and add it to your DNS
+6. Wait for your domain to be verified by FL0
+
+Due to the nature of DNS, changes may take up to 72 hours to take effect.
+
+### Adding a DNS record
+To add the `CNAME` record to your DNS, copy the value provided by FL0. It might look like `fl0.1.us-1.fl0.io`.
+Log in to your DNS provider's control panel and create a new `CNAME` record.
+
+**Hostname**  
+Your subdomain, without the rest of the URL.  
+E.g. `www`
+
+**Target name**  
+The value provided by FL0.  
+E.g. `fl0.1.us-1.fl0.io`
+
+**TTL**  
+Leave as default
+
+![Custom domain DNS](./assets/custom-domain-dns.png)
+
+
+### Limitations
+FL0 currently supports subdomains only. This means you can use `www.mydomain.com` or `api.mydomain.com` but not `mydomain.com`.
+
 ## Outgoing IP Addresses
 If you need FL0 to connect to external services, you might need to know the IP addresses that FL0 uses so you can allowlist them in your firewall settings.
 Common examples of this include:

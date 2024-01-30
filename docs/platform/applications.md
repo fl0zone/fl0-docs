@@ -119,6 +119,10 @@ https://{app-name}-{unique-identifier}.{region}.fl0.io
 2. `{{unique-identifier}}` is a randomly generated 4 character string
 3. `{{region}}` indicates the regional location of the app -- a numeric prefix followed by a [location identifier](/docs/platform/networking) (eg: `4.us-1`)
 
+:::tip
+To set up a custom domain, see the [Networking section](./networking)
+:::
+
 ### Viewing Logs
 
 Logs from the containers running your apps can be found on the **Logs** tab.
