@@ -1,50 +1,49 @@
----
----
-
-# Python
-
-Deploying a Python web service on FL0 is straightforward - most Python packaging tools are supported, and all web-frameworks are supported.
-FL0 has built-in language support for Python, so you don't need to provide a Dockerfile.
+Deploying a Python web service on FL0 is straightforward, as it supports most Python packaging tools and all web frameworks natively. Here are the essential details and steps you need to follow to set up your application on FL0.
 
 ## Listening to the Right Port
 
-The most common ASGI/WSGI tools are supported natively by FL0, you need only provide a `Procfile` in the root of your directory that defines the correct configuration for your ASGI/WSGI tool.
-FL0 injects an environment variable called `PORT` into your application's container. Your app must listen on this port. Below are some examples of how to do this for a number of common frameworks and
+FL0 supports common ASGI/WSGI tools natively. You need to provide a `Procfile` in the root directory of your project to define the correct configuration for your ASGI/WSGI tool. FL0 injects an environment variable called `PORT` into your application's container, and your app must listen on this port. Below are examples for different frameworks.
 
 ## Supported Build Tools
 
-We currently support plain Pip, Conda, Pipenv, and Poetry.
+FL0 supports the following build tools:
+- Pip
+- Conda
+- Pipenv
+- Poetry
 
-## Template Repo
+## Template Repository
 
-A working template repo using FastAPI and Uvicorn that you can use directly from FL0 can be found [here](https://github.com/fl0zone/template-python-fastapi)
+A working template repository using FastAPI and Uvicorn is available [here](https://github.com/fl0zone/template-python-fastapi). You can use this template directly on FL0.
 
-### FastAPI / Starlette / etc
+### FastAPI / Starlette / etc.
 
-For web-frameworks that automatically hook into an ASGI provider (such as Uvicorn), to configure your application, you need to provide a file in the root of your directory called `Procfile` that defines your ASGI startup details.
-For example, if you wish to use Uvicorn, your `Procfile` might look like this:
-`web: uvicorn main:app --proxy-headers --host=0.0.0.0 --port=${PORT}`
-Refer to your web-frameworks documentation for
+For web frameworks that automatically hook into an ASGI provider (such as Uvicorn), you need to provide a `Procfile` in the root directory of your project to define your ASGI startup details. For example, if you wish to use Uvicorn, your `Procfile` might look like this:
 
-### Flask / etc
+```
+web: uvicorn main:app --proxy-headers --host=0.0.0.0 --port=${PORT}
+```
 
-If you are using these web-frameworks with Gunicorn as your WSGI provider, the setup is even easier, your `Procfile` will simply be:
+Refer to your web framework's documentation for additional configuration details.
+
+### Flask / etc.
+
+For web frameworks using Gunicorn as the WSGI provider, your `Procfile` will be even simpler:
 
 ```
 web: gunicorn server:app
 ```
 
-Along with any other Gunicorn configs you wish to pass.
+You can also pass any other Gunicorn configurations you need.
 
-## ASGI Option considerations
+## ASGI Option Considerations
 
-FL0 currently performs TLS termination for you, so you will need to add the
-``--proxy-headers` flag to your Procfile:
+FL0 performs TLS termination for you, so you will need to add the `--proxy-headers` flag to your `Procfile`:
 
 ```
 web: uvicorn main:app --proxy-headers ...
 ```
 
-## Specifying your Python version
+## Specifying Your Python Version
 
-Depending on your package management tool, FL0 will auto-detect the version of Python you are using. MiniConda, Poetry and Pipenv allow you to set the Python version in their respective config-files, these configs will be automatically detected and used.
+FL0 auto-detects the version of Python you are using based on your package management tool. MiniConda, Poetry, and Pipenv allow you to set the Python version in their respective configuration files, and these configurations will be automatically detected and used by FL0.
