@@ -1,6 +1,6 @@
 [![CC-BY-NC-SA 4.0](https://img.shields.io/badge/license-CC--BY--NC--SA--4.0-teal)](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)
 
-# FL0 Documentation
+# No More FL0 Documentation
 
 ### What is FL0?
 FL0 is the easiest way to deploy backend applications in minutes. FL0 is built for developers looking for a fast, reliable way to deploy and scale backend applications. Simply connect your repo, or choose from a library of production-ready templates that can be launched in seconds. FL0 builds and deploys your code in containers, meaning you can easily scale from one customer, to millions.
